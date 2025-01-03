@@ -20,4 +20,19 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Home\.DS_Store" />
+    <None Include="wwwroot\Home\css\.DS_Store" />
+    <None Include="wwwroot\Home\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\Home\css\css\.DS_Store" />
+    <None Include="wwwroot\Home\fonts\.DS_Store" />
+    <None Include="wwwroot\Home\fonts\flaticon\.DS_Store" />
+    <None Include="wwwroot\Home\fonts\flaticon\font\.DS_Store" />
+    <None Include="wwwroot\Home\fonts\ionicons\fonts\.DS_Store" />
+    <None Include="wwwroot\Home\images\.DS_Store" />
+    <None Include="wwwroot\Home\js\.DS_Store" />
+    <None Include="wwwroot\Home\scss\.DS_Store" />
+    <None Include="wwwroot\Home\scss\bootstrap\.DS_Store" />
+  </ItemGroup>
+
 </Project>

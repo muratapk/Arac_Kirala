@@ -53,7 +53,7 @@
                 @Html.DisplayFor(modelItem => item.AracName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MarkaId)
+                @Html.DisplayFor(modelItem => item.Markalar.MarkaAdi)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Depozito)
@@ -72,13 +72,13 @@
                 <img src="/Arac_Resim/@item.Resim" width="100px" height="100px"/>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Vites.VitesId)
+                @Html.DisplayFor(modelItem => item.Vites.VitesAdi)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Yakit.YakitId)
+                @Html.DisplayFor(modelItem => item.Yakit.YakitAdi)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Modeller.ModellerId)
+                @Html.DisplayFor(modelItem => item.Modeller.ModellerAdi)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AracId">Edit</a> |

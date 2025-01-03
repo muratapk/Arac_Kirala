@@ -22,7 +22,7 @@ namespace Arac_Kirala.Controllers
         // GET: Araclars
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Araclars.Include(a => a.Modeller).Include(a => a.Vites).Include(a => a.Yakit);
+            var applicationDbContext = _context.Araclars.Include(a => a.Modeller).Include(a => a.Vites).Include(a => a.Yakit).Include(a => a.Markalar);
             return View(await applicationDbContext.ToListAsync());
         }
 
