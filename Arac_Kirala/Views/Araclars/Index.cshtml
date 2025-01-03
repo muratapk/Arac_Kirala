@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Arac_Kirala.Models.Araclar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AracName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Depozito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KmLimit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Koltuk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Konum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vites)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yakit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modeller)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AracName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarkaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depozito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KmLimit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Koltuk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konum)
+            </td>
+            <td>
+               @*  @Html.DisplayFor(modelItem => item.Resim) *@
+                <img src="/Arac_Resim/@item.Resim" width="100px" height="100px"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vites.VitesId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yakit.YakitId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modeller.ModellerId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AracId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AracId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AracId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlTypes;
 
 namespace Arac_Kirala.Models
@@ -22,6 +23,10 @@ namespace Arac_Kirala.Models
 		public virtual Modeller ? Modeller { get; set; }
 		public virtual Markalar? Markalar { get; set; }
 		public virtual List<Odemeler>? Odemelers { get; set; }
+
+		[NotMapped]
+		public IFormFile? Picture { get; set; }
+		//resim dosyasını yükleme için kullanıyoruz
 
 	}
 }

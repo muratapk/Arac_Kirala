@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Arac_Kirala.Models.Rezervasyon>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlisTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlisSaati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirakTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirakSaati)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlisTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlisSaati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirakTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirakSaati)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RezervasyonId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RezervasyonId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RezervasyonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
