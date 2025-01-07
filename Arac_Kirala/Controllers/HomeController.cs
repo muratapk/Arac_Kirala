@@ -1,5 +1,7 @@
+using Arac_Kirala.Context;
 using Arac_Kirala.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Arac_Kirala.Controllers
@@ -7,10 +9,11 @@ namespace Arac_Kirala.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
-
-		public HomeController(ILogger<HomeController> logger)
+		private readonly ApplicationDbContext _context;
+		public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
 		{
 			_logger = logger;
+			_context = context;
 		}
 
 		public IActionResult Index()
@@ -22,7 +25,12 @@ namespace Arac_Kirala.Controllers
 		{
 			return View();
 		}
-
+		public IActionResult Details(int ? id)
+		{
+			var liste = _context.Araclars.Include(x => x.Yakit).Include(x => x.Markalar).Include(x => x.Vites).Where(x => x.AracId == id)
+	.FirstOrDefault();
+			return View(liste);
+		}
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
