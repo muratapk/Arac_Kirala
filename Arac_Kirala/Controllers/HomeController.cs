@@ -20,6 +20,11 @@ namespace Arac_Kirala.Controllers
 		{
 			return View();
 		}
+		public IActionResult RealetedCar()
+		{
+			
+			return PartialView("RealtedList");
+		}
 
 		public IActionResult Privacy()
 		{

@@ -1,9 +1,12 @@
 ﻿using Arac_Kirala.Models;
+
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace Arac_Kirala.Context
 {
-	public class ApplicationDbContext:DbContext
+	public class ApplicationDbContext:IdentityDbContext<AppUser,AppRole,int>
 	{
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options):base(options)
 		{
