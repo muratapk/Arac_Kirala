@@ -1,4 +1,5 @@
 using Arac_Kirala.Context;
+using Arac_Kirala.DataO;
 using Arac_Kirala.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,17 @@ namespace Arac_Kirala.Controllers
 		{
 			var liste = _context.Araclars.Include(x => x.Yakit).Include(x => x.Markalar).Include(x => x.Vites).Where(x => x.AracId == id)
 	.FirstOrDefault();
+			var arac = _context.Araclars.ToList();
+			var aracViewModels =arac.Select(arac => new MarkViewModel
+			{
+				AracId = arac.AracId,
+				MarkaId = arac.MarkaId,
+				YakitId = arac.YakitId,
+				AracName = arac.AracName
+			}).ToList();
+
+
+
 			return View(liste);
 		}
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
