@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Arac_Kirala.Context;
 using Arac_Kirala.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Arac_Kirala.Controllers
 {
@@ -20,6 +21,7 @@ namespace Arac_Kirala.Controllers
         }
 
         // GET: Araclars
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Araclars.Include(a => a.Modeller).Include(a => a.Vites).Include(a => a.Yakit).Include(a => a.Markalar);

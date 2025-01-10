@@ -1,5 +1,6 @@
 ﻿using Arac_Kirala.Context;
 using Arac_Kirala.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Arac_Kirala.Controllers
@@ -13,11 +14,12 @@ namespace Arac_Kirala.Controllers
             _context = context;
         }
 
-        //database bağlanmak için DbContext nesnesi tanımlıyorum _context;
+		//database bağlanmak için DbContext nesnesi tanımlıyorum _context;
 
 
-        //constructor yani otomatik nesne çağır çağırılmaz çalışsın
-        public IActionResult Index()
+		//constructor yani otomatik nesne çağır çağırılmaz çalışsın
+		[Authorize]
+		public IActionResult Index()
         {
             //index dosyası tamamiyle yakitların listesi olacak
             var liste = _context.Yakit.ToList();
