@@ -1,0 +1,6 @@
+@AracApi_HostAddress = http://localhost:5190
+
+GET {{AracApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
