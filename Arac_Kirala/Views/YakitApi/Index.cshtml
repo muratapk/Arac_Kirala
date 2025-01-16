@@ -6,7 +6,7 @@
 
 
 <h1>Index</h1>
-<a asp-controller="Yakits" asp-action="Create" class="btn btn-primary">Yeni</a>
+<a asp-controller="YakitApi" asp-action="Create" class="btn btn-primary">Yeni</a>
 <table class="table">
     <thead>
         <tr>
@@ -22,8 +22,8 @@
             <tr>
                 <th scope="row">1</th>
                 <td>@item.YakitAdi</td>
-                <td><a class="btn btn-success" asp-controller="Yakits" asp-action="Edit" asp-route-id="@item.YakitId">Düzelt</a></td>
-                <td><a class="btn btn-danger" asp-controller="Yakits" asp-action="Delete" asp-route-id="@item.YakitId">Silme</a></td>
+                <td><a class="btn btn-success" asp-controller="YakitApi" asp-action="Edit" asp-route-id="@item.YakitId">Düzelt</a></td>
+                <td><a class="btn btn-danger" asp-controller="YakitApi" asp-action="Delete" asp-route-id="@item.YakitId">Silme</a></td>
             </tr>
         }
 
