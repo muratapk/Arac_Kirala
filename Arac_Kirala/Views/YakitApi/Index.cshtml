@@ -1,0 +1,33 @@
+﻿@model List<Arac_Kirala.Models.Yakit>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>Index</h1>
+<a asp-controller="Yakits" asp-action="Create" class="btn btn-primary">Yeni</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Yakıt Adı</th>
+            <th scope="col">Düzelt</th>
+            <th scope="col">Silme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.YakitAdi</td>
+                <td><a class="btn btn-success" asp-controller="Yakits" asp-action="Edit" asp-route-id="@item.YakitId">Düzelt</a></td>
+                <td><a class="btn btn-danger" asp-controller="Yakits" asp-action="Delete" asp-route-id="@item.YakitId">Silme</a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
