@@ -45,6 +45,7 @@
                     <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
                     <li class="nav-item"><a asp-controller="Register" asp-action="Index" class="nav-link"><i class="fa-solid fa-right-to-bracket"></i> Kayıt Ol</a></li>
                     <li class="nav-item"><a asp-controller="Login" asp-action="Index" class="nav-link"> <i class="fa-solid fa-user"></i>Login</a></li>
+                   @await Component.InvokeAsync("SepetListe");
                 </ul>
             </div>
         </div>

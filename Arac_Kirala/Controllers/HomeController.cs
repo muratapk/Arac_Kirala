@@ -35,6 +35,7 @@ namespace Arac_Kirala.Controllers
 		{
 			var liste = _context.Araclars.Include(x => x.Yakit).Include(x => x.Markalar).Include(x => x.Vites).Where(x => x.AracId == id)
 	.FirstOrDefault();
+			//tek bir araba bilgisine ulaþmak
 			var arac = _context.Araclars.ToList();
 			var aracViewModels =arac.Select(arac => new MarkViewModel
 			{
@@ -44,10 +45,13 @@ namespace Arac_Kirala.Controllers
 				AracName = arac.AracName
 			}).ToList();
 
-
+			ViewBag.Markalar=_context.Araclars.Where(x=>x.MarkaId==liste.MarkaId).ToList();
+			//3 nolu ürün seç diyoruz alt kýsýmýnda bu 3 no baðlantýlý markasý 3 nolu ürün 
+			//markasýna benzeyen araçlarý seç
 
 			return View(liste);
 		}
+		
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{

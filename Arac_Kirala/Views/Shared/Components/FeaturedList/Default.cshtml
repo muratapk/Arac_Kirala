@@ -24,7 +24,7 @@
                                     <span class="cat">@item.ModellerId -- @item.MarkaId</span>
                                     <p class="price ml-auto">@item.Depozito <span>/day</span></p>
                                 </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a asp-controller="Home" asp-action="Details" asp-route-id="@item.AracId" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                                <p class="d-flex mb-0 d-block"><a asp-controller="Home" asp-action="Rezervasyon" asp-route-id="@item.AracId" class="btn btn-primary py-2 mr-1">Sepette Ekle</a> <a asp-controller="Home" asp-action="Details" asp-route-id="@item.AracId" class="btn btn-secondary py-2 ml-1">Details</a></p>
                             </div>
                         </div>
                     </div>
